@@ -1,0 +1,119 @@
+matrix calculator options:
+To add values to matrix use command read_mat
+To print the matrix use command print_mat 
+For matrices addition use command add_mat 
+For matrices subtraction use command sub_mat 
+For matrices multiplication use command mul_mat 
+For scalar multiplication use command mul_scalar
+For matrix transportation use command trans_mat 
+To exit write "stop" 
+Please enter matrix calc command
+$:unknown_command MAT_A,9,9,9,9
+
+ERROR:Undefined command name
+$:read_mat
+
+ERROR:Missing argument
+$:read_mat unknown_matrix1,2,3
+
+ERROR:Undefined matrix name
+$:read_mat MAT_A,0,0,0,0,0,0,0,0,0,0,1,2,3,4,5,6
+$:read_mat MAT_B,1,2,#,4,5,6
+
+ERROR:Argument is not a real number.
+$:read_mat MAT_C,1,2,3,4,5,6,7,8,9,10
+$:read_mat MAT_D,13.5,14.5,15.5,16.5,5.5,6.5,7.5,8.5,9.5,10.5,11.5,12.5,13.5,14.5,15.5,16.5
+$:read_mat MAT_E,1.5,2.5,3.5,4.5,5.5,6.5,7.5,8.5,9.5,10.5,11.5,12.5,13.5,14.5,15.5,16.5,99.5
+$:print_mat
+
+ERROR:Missing argument
+$:print_mat unknown_matrix
+
+ERROR:Undefined matrix name
+$:print_mat MAT_B
+|   0.00 |   0.00 |   0.00 |   0.00 |
+|   0.00 |   0.00 |   0.00 |   0.00 |
+|   0.00 |   0.00 |   0.00 |   0.00 |
+|   0.00 |   0.00 |   0.00 |   0.00 |
+
+$:print_mat MAT_F
+|   0.00 |   0.00 |   0.00 |   0.00 |
+|   0.00 |   0.00 |   0.00 |   0.00 |
+|   0.00 |   0.00 |   0.00 |   0.00 |
+|   0.00 |   0.00 |   0.00 |   0.00 |
+
+$:print_mat MAT_E
+|   1.50 |   2.50 |   3.50 |   4.50 |
+|   5.50 |   6.50 |   7.50 |   8.50 |
+|   9.50 |  10.50 |  11.50 |  12.50 |
+|  13.50 |  14.50 |  15.50 |  16.50 |
+
+$:print_mat MAT_D
+|  13.50 |  14.50 |  15.50 |  16.50 |
+|   5.50 |   6.50 |   7.50 |   8.50 |
+|   9.50 |  10.50 |  11.50 |  12.50 |
+|  13.50 |  14.50 |  15.50 |  16.50 |
+
+$:print_mat MAT_A
+|   0.00 |   0.00 |   0.00 |   0.00 |
+|   0.00 |   0.00 |   0.00 |   0.00 |
+|   0.00 |   0.00 |   1.00 |   2.00 |
+|   3.00 |   4.00 |   5.00 |   6.00 |
+
+$:print_mat MAT_C
+|   1.00 |   2.00 |   3.00 |   4.00 |
+|   5.00 |   6.00 |   7.00 |   8.00 |
+|   9.00 |  10.00 |   0.00 |   0.00 |
+|   0.00 |   0.00 |   0.00 |   0.00 |
+
+$:add_mat
+
+ERROR:Missing argument
+$:add_mat MAT_A
+
+ERROR:Missing argument
+$:add_mat MAT_A, MAT_B
+
+ERROR:Missing argument
+$:add_mat MAT_A, MAT_C, MAT_F
+$:print_mat MAT_F
+|   1.00 |   2.00 |   3.00 |   4.00 |
+|   5.00 |   6.00 |   7.00 |   8.00 |
+|   9.00 |  10.00 |   1.00 |   2.00 |
+|   3.00 |   4.00 |   5.00 |   6.00 |
+
+$:sub_mat MAT_F, MAT_C, MAT_A
+$:print_mat MAT_A
+|   0.00 |   0.00 |   0.00 |   0.00 |
+|   0.00 |   0.00 |   0.00 |   0.00 |
+|   0.00 |   0.00 |   1.00 |   2.00 |
+|   3.00 |   4.00 |   5.00 |   6.00 |
+
+$:mul_scalar MAT_A 2 MAT_F
+$:print_mat MAT_F
+|   0.00 |   0.00 |   0.00 |   0.00 |
+|   0.00 |   0.00 |   0.00 |   0.00 |
+|   0.00 |   0.00 |   2.00 |   4.00 |
+|   6.00 |   8.00 |  10.00 |  12.00 |
+
+$:read_mat MAT_A,1,1,1,1,2,2,2,2,3,3,3,3,4,4,4,4
+$:read_mat MAT_B,2,2,2,2,0,0,0,0,0,0,0,0,0,0,0,0
+$:mul_mat MAT_A,MAT_B,MAT_C
+$:print_mat MAT_C
+|   2.00 |   2.00 |   2.00 |   2.00 |
+|   4.00 |   4.00 |   4.00 |   4.00 |
+|   6.00 |   6.00 |   6.00 |   6.00 |
+|   8.00 |   8.00 |   8.00 |   8.00 |
+
+$:trans_mat MAT_C MAT_A
+$:print_mat MAT_A
+|   2.00 |   4.00 |   6.00 |   8.00 |
+|   2.00 |   4.00 |   6.00 |   8.00 |
+|   2.00 |   4.00 |   6.00 |   8.00 |
+|   2.00 |   4.00 |   6.00 |   8.00 |
+
+$:stop now
+
+ERROR:Extraneous text after end of command.
+$:stop
+Stop program.
